@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np  # type: ignore
 a = np.array([[1,2],[2,3]])
 b = np.array([[1,2],[3,4]])
 print("A :")
@@ -21,3 +21,17 @@ print()
 division = a / b 
 print("Division Matrix :")
 print(division)
+print()
+ar = np.array([1,4,2,3,6,7])
+print("A = ", ar)
+arr = np.reshape(ar,[2,3])
+print("Reshaped Array :")
+print(arr)
+print()
+mat = np.array([[1,2],[2,3]])
+print("A :")
+print(mat)
+inverse = np.linalg.inv(mat)
+print("inverse of matrix is :")
+print(inverse)
+
