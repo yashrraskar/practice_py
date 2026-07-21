@@ -1,0 +1,23 @@
+import numpy as np
+a = np.array([[1,2],[2,3]])
+b = np.array([[1,2],[3,4]])
+print("A :")
+print(a)
+print("B :")
+print(b)
+print()
+addition = a + b
+print("Addition Matrix :")
+print(addition)
+print()
+substraction = a - b
+print("Substractrion Matrix :")
+print(substraction)
+print()
+multiplication = np.dot(a,b)
+print("Multiplication Matrix :")
+print(multiplication)
+print()
+division = a / b 
+print("Division Matrix :")
+print(division)
