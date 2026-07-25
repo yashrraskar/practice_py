@@ -1,0 +1,32 @@
+import pandas as pd 
+
+print("READING .CSV FILE")
+csv = pd.read_csv("~/Downloads/yrr/student.csv")
+print(csv)
+print()
+
+print("READING .EXCEL FILE")
+excel = pd.read_excel("~/Downloads/yrr/student.xlsx")
+print(excel)
+print()
+
+print("READING .JSON FILE")
+json = pd.read_json("~/Downloads/yrr/student.json")
+print(json)
+print()
+
+#explore dimensions
+print("\n\n Dimensions of Dataset :")
+print(json.shape)
+
+#explore data types
+print("\n\n Data Types :")
+print(json.dtypes)
+
+#check missing values 
+print("\n\n Missing values : ")
+print(json.isnull().sum())
+
+#descriptive statistics 
+print("\n\n Descriptive Statistics :")
+print(json.describe())
