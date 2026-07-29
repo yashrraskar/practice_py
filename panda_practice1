@@ -1,0 +1,13 @@
+# 1
+print("CREATING DATA FRAME")
+import pandas as pd
+#creating data frame 
+data = {
+    "NAME" : ["YASH","KOMAL","SHEETAL","RAVINDRA","BHARATI"],
+    "AGE" : [19,30,27,52,41],
+    "MARKS" : [70,89,95,75,82],
+    "CITY" : ["PUNE","SATARA","CHINCHWAD","LONAND","LONAND"],
+}
+df = pd.DataFrame(data)
+print(df)
+print()
