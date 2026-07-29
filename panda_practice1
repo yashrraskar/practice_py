@@ -11,3 +11,16 @@ data = {
 df = pd.DataFrame(data)
 print(df)
 print()
+
+
+#2
+print("SELECTING COLUMNS")
+print(df["NAME"]) # selects one column
+print(df[["NAME","AGE"]]) #selects two columns 
+print()
+
+#3
+print("SELECT ROW USING ILOC")
+print(df.iloc[0]) #selects one row
+print(df.iloc[0:2]) #selects two rows
+print()
