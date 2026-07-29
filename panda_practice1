@@ -12,7 +12,6 @@ df = pd.DataFrame(data)
 print(df)
 print()
 
-
 #2
 print("SELECTING COLUMNS")
 print(df["NAME"]) # selects one column
@@ -23,4 +22,18 @@ print()
 print("SELECT ROW USING ILOC")
 print(df.iloc[0]) #selects one row
 print(df.iloc[0:2]) #selects two rows
+print()
+
+#4
+print("FILTERING DATA")
+result = df[df["MARKS"]>80] # students with marks more than 80
+print(result)
+print(df[df["CITY"]=="PUNE"]) #students form pune
+print(df[(df["MARKS"]>80) & (df["AGE"]<22)]) #marks greater than 80 and age more than 22
+print()
+
+#5
+print("DATA AGGREGATION USING groupby()")
+result =  df.groupby("CITY")["MARKS"].mean() #find avg marks citywise
+print(result)
 print()
