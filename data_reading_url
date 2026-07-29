@@ -1,0 +1,26 @@
+import pandas as pd
+print("READING DATA FROM ONLINE SOURCE")
+url = "https://raw.githubusercontent.com/veekun/pokedex/master/pokedex/data/csv/pokemon.csv"
+df = pd.read_csv(url)
+
+#displays full data
+print(df.head()) 
+print()
+
+#displays the last 5 rows
+df.tail() 
+
+#selecting rows
+print("\nSelected Rows")
+print(df.iloc[0:5])
+
+#filtering data
+print("\nFiltered Data (Pokémon with height > 10)")
+filtered_df = df[df["height"] > 10]
+print(filtered_df.head())
+
+#another filtering example
+print("\nPokémon with weight > 500")
+heavy_pokemon = df[df["weight"] > 500]
+print(heavy_pokemon.head())
+
