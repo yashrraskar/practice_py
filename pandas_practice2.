@@ -1,0 +1,19 @@
+import pandas as pd
+import numpy as np
+
+
+df = pd.read_csv("/home/pccoe/Downloads/dataa.csv")
+
+
+print("\nFIRST 5 ")
+print(df.head())
+print("\nLAST 5 ")
+print(df.tail())
+print("\nINFO ")
+print(df.info())
+print("\nDATA SHAPE")
+print(df.shape)
+print("\nCOLUMNS")
+print(df.columns)
+
+
