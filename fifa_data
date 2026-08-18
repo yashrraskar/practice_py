@@ -1,0 +1,26 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("Fifa_world_cup_matches.csv")
+#print(df)
+
+print("DISPLAYING DATA : \n")
+print(df.head())
+
+print("\nDATASET SHAPE")
+print(df.shape)
+
+print("\nCOLUMN NAMES")
+print(df.columns)      
+
+#print("\nDATA TYPES")
+#print(df.dtypes)     
+
+#print("\nDATA INFORMATION")
+#print(df.info())       
+
+print("\nMISSING VALUES")
+print(df.isnull().sum())
+
+print("\nNUMBER OF DUPLICATE ROWS")
+print(df.duplicated().sum())
