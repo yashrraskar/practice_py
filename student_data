@@ -1,0 +1,55 @@
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
+
+df = pd.read_csv("depression.csv")
+
+print("FIRST 5 ROWS")
+print(df.head())
+
+print("\nDATASET SHAPE")
+print(df.shape)
+
+print("\nCOLUMN NAMES")
+print(df.columns)
+
+print("\nMISSING VALUES")
+print(df.isnull().sum())
+
+# HANDLE MISSING VALUES
+numerical_columns = df.select_dtypes(include=np.number).columns
+df[numerical_columns] = df[numerical_columns].fillna(
+    df[numerical_columns].median()
+)
+print("\nAFTER HANDLING MISSING VALUES")
+print(df.isnull().sum())
+
+# Label Encoding
+label_encoder = LabelEncoder()
+df['Gender_Label'] = label_encoder.fit_transform(df['Gender'])
+print("\nAFTER LABEL ENCODING")
+print(df[['Gender', 'Gender_Label']])
+
+# One-Hot Encoding
+print("\nBEFORE ONE-HOT ENCODING")
+print(df.head())
+df = pd.get_dummies(df, columns=['City'], dtype=int)
+
+print("\nAFTER ONE-HOT ENCODING")
+print(df.head())
+
+# Select Numerical Features
+features = df[['Age', 'Depression']]
+print("\nSELECT SPECIFIC COLUMNS")
+print(features)
+
+# Feature Engineering
+
+print("\nBEFORE FEATURE ENGINEERING:")
+print(df.head())
+
+df['Age_Group'] = df['Age'].apply(
+    lambda x: 'Young' if x < 30 else 'Adult'
+)
+print("\nAFTER FEATURE ENGINEERING:")
+print(df.head())
